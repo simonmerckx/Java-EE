@@ -117,9 +117,6 @@ public class CarRentalSession implements CarRentalSessionRemote {
         
 	}
     
-    
-    
-    
     private HashMap<Quote, CarRentalCompany> pendingQuotes = new HashMap<Quote, CarRentalCompany>();
     
     public HashMap<Quote, CarRentalCompany> getPendingQuotes(){

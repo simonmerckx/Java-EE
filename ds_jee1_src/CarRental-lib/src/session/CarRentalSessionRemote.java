@@ -6,6 +6,8 @@ import java.util.Set;
 import javax.ejb.Remote;
 import rental.CarType;
 import rental.Quote;
+import rental.Reservation;
+import rental.ReservationException;
 
 @Remote
 public interface CarRentalSessionRemote {
@@ -14,8 +16,10 @@ public interface CarRentalSessionRemote {
 
     public Set<CarType> getAvailableCarTypes();
     
-    public Quote createQuote(String clientName, Date start, Date end, String carType, String region);
+    public Quote createQuote(String clientName, Date start, Date end, String carType, String region) throws Exception;
     
     public List<Quote> getCurrentQuotes();
+    
+     public List<Reservation> confirmQuotes() throws ReservationException;
     
 }

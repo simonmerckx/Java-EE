@@ -1,5 +1,6 @@
 package rental;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
@@ -45,6 +46,15 @@ public class CarRentalCompany {
 
 	private void setName(String name) {
 		this.name = name;
+	}
+        
+        public List<Reservation> getReservations() {
+		List<Reservation> reservations = new ArrayList();
+		for(Car car: this.cars) {
+			reservations.addAll(car.getAllReservations());
+		}
+		
+		return reservations;
 	}
 
 	/*************
