@@ -7,10 +7,7 @@ package session;
 
 import javax.ejb.Remote;
 
-/**
- *
- * @author r0666973
- */
+//TODO remote exception?
 @Remote
 public interface ManagerSessionRemote {
     
