@@ -1,8 +1,11 @@
 package session;
 
+import java.util.Date;
+import java.util.List;
 import java.util.Set;
 import javax.ejb.Remote;
 import rental.CarType;
+import rental.Quote;
 
 @Remote
 public interface CarRentalSessionRemote {
@@ -10,5 +13,9 @@ public interface CarRentalSessionRemote {
     Set<String> getAllRentalCompanies();
 
     public Set<CarType> getAvailableCarTypes();
+    
+    public Quote createQuote(String clientName, Date start, Date end, String carType, String region);
+    
+    public List<Quote> getCurrentQuotes();
     
 }
