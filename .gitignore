@@ -21,3 +21,15 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/ds_jee1_src/CarRental/nbproject/private/
+/ds_jee1_src/CarRental-client/nbproject/private/
+/ds_jee1_src/CarRental-ejb/nbproject/private/
+/ds_jee1_src/CarRental-lib/nbproject/private/
+/ds_jee1_src/CarRental/build/
+/ds_jee1_src/CarRental/dist/
+/ds_jee1_src/CarRental-client/build/
+/ds_jee1_src/CarRental-client/dist/
+/ds_jee1_src/CarRental-lib/dist/
+/ds_jee1_src/CarRental-ejb/build/
+/ds_jee1_src/CarRental-ejb/dist/
+/ds_jee1_src/CarRental-lib/build/
