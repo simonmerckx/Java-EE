@@ -3,7 +3,8 @@ package client;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.naming.InitialContext;
 import rental.Reservation;
@@ -18,7 +19,13 @@ public class Main extends AbstractTestAgency<CarRentalSessionRemote, ManagerSess
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      //  System.out.println("found rental companies: "+session.getAllRentalCompanies());
+        Main main;
+        main = new Main("simpleTrips");
+        try {
+            main.run();
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     //TODO ??? dit hebben wij toegevoegd, maar niet zeker
