@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.naming.InitialContext;
+import rental.Quote;
 import rental.Reservation;
 import session.CarRentalSessionRemote;
 import session.ManagerSessionRemote;
@@ -44,22 +45,31 @@ public class Main extends AbstractTestAgency<CarRentalSessionRemote, ManagerSess
 
     @Override
     protected void createQuote(CarRentalSessionRemote session, String name, Date start, Date end, String carType, String region) throws Exception {
-        session.createQuote(name, start, end, carType, region);
+        Quote quote = session.createQuote(name, start, end, carType, region);
+        System.out.println(quote.toString());
     }
 
     @Override
     protected List<Reservation> confirmQuotes(CarRentalSessionRemote session, String name) throws Exception {
-        return session.confirmQuotes(); //TODO voor Simon
+        List<Reservation> reservations = session.confirmQuotes();
+        for(Reservation res: reservations) {
+            System.out.println(res.toString());
+        }
+        return reservations; 
     }
 
     @Override
     protected int getNumberOfReservationsBy(ManagerSessionRemote ms, String clientName) throws Exception {
-        return ms.getNumberOfReservationsByRenter(clientName);
+        int number = ms.getNumberOfReservationsByRenter(clientName);
+        System.out.println(number + " reservatios by " + clientName);
+        return number;
     }
 
     @Override
     protected int getNumberOfReservationsForCarType(ManagerSessionRemote ms, String carRentalName, String carType) throws Exception {
-        return ms.getNumberOfReservationsForCarType(carRentalName, carType);
+        int number = ms.getNumberOfReservationsForCarType(carRentalName, carType);
+        System.out.println(number + " reservatios for " + carType);
+        return number;
     }
 
     

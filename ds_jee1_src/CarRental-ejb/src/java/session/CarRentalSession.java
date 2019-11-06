@@ -24,9 +24,6 @@ public class CarRentalSession implements CarRentalSessionRemote {
     public Set<String> getAllRentalCompanies() {
         return new HashSet<String>(RentalStore.getRentals().keySet());
     }
-
-    
- 
     
     // removed region
     // TODO -> removed RemoteException
@@ -119,9 +116,4 @@ public class CarRentalSession implements CarRentalSessionRemote {
     public HashMap<Quote, CarRentalCompany> getPendingQuotes(){
 		return this.pendingQuotes;
     }
-    
-    
-    
-    
-    
 }
