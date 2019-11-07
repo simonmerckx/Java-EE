@@ -14,12 +14,14 @@ public interface CarRentalSessionRemote {
 
     Set<String> getAllRentalCompanies();
 
-    public Set<CarType> getAvailableCarTypes();
+    public Set<CarType> getAvailableCarTypes(Date start, Date end);
     
     public Quote createQuote(String clientName, Date start, Date end, String carType, String region) throws Exception;
     
     public List<Quote> getCurrentQuotes();
     
-     public List<Reservation> confirmQuotes() throws ReservationException;
+    public List<Reservation> confirmQuotes() throws ReservationException;
+    
+    
     
 }

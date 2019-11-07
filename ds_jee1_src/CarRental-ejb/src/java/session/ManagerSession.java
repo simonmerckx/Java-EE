@@ -26,28 +26,19 @@ public class ManagerSession implements ManagerSessionRemote {
     @Override
     public int getNumberOfReservationsByRenter(String clientName) {
         Collection<CarRentalCompany> companies = RentalStore.getRentals().values();
-        Set<Reservation> reservations = new HashSet<Reservation>();
+        List<Reservation> reservations = new ArrayList<Reservation>();
         for(CarRentalCompany company: companies) {
 	    reservations.addAll(company.getReservationsBy(clientName));
 	}
 	return reservations.size();
     }
     
-    
-    private List<Reservation> getAllReservations()  {
-	Collection<CarRentalCompany> companies = RentalStore.getRentals().values();
-	List<Reservation> reservations = new ArrayList<Reservation>();
-	for(CarRentalCompany company: companies) {
-		reservations.addAll(company.getReservations());
-	}
-	return reservations;
-	}
-
     @Override
     public int getNumberOfReservationsForCarType(String carRentalName, String carType) {
+        CarRentalCompany company = RentalStore.getRental(carRentalName);
 	int nbOfReservationsForCarType = 0;
-	for(Reservation res: getAllReservations()) {
-	    if(res.getCarType().equals(carType) && res.getRentalCompany().equals(carRentalName)) {
+	for(Reservation res: company.getReservations()) {
+	    if(res.getCarType().equals(carType)) {
 	        nbOfReservationsForCarType++;
 	    }
 	}

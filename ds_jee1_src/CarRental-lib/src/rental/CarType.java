@@ -1,6 +1,8 @@
 package rental;
 
-public class CarType {
+import java.io.Serializable;
+
+public class CarType implements Serializable {
     
     private String name;
     private int nbOfSeats;
@@ -55,7 +57,7 @@ public class CarType {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = (int)(prime * result + ((name == null) ? 0 : name.hashCode()) + rentalPricePerDay);
 		return result;
 	}
 
