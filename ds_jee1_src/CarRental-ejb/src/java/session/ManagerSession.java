@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.annotation.security.DeclareRoles;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 import rental.CarRentalCompany;
@@ -19,6 +20,7 @@ import rental.Reservation;
 
 
 @Stateless
+@DeclareRoles("Manager")
 @RolesAllowed("Manager")
 public class ManagerSession implements ManagerSessionRemote {
     
