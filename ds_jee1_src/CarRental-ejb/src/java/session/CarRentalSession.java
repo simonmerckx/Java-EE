@@ -26,8 +26,7 @@ public class CarRentalSession implements CarRentalSessionRemote {
         return new HashSet<String>(RentalStore.getRentals().keySet());
     }
     
-    // removed region
-    // TODO -> removed RemoteException
+    
     @Override
     public Set<CarType> getAvailableCarTypes(Date start,Date end) {
         Collection<CarRentalCompany> companies = RentalStore.getRentals().values();
