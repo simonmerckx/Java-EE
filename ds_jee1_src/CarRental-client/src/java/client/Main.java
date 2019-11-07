@@ -29,7 +29,7 @@ public class Main extends AbstractTestAgency<CarRentalSessionRemote, ManagerSess
         }
     }
 
-    //TODO ??? dit hebben wij toegevoegd, maar niet zeker
+    
     public Main(String scriptFile) {
         super(scriptFile);
     }
@@ -40,7 +40,7 @@ public class Main extends AbstractTestAgency<CarRentalSessionRemote, ManagerSess
 	Iterator value = session.getAvailableCarTypes(start, end).iterator(); 
 	while (value.hasNext()) { 
             System.out.println(value.next().toString()); 
-        } //TODO print remove
+        } 
     }
 
     @Override
@@ -73,9 +73,8 @@ public class Main extends AbstractTestAgency<CarRentalSessionRemote, ManagerSess
     }
 
     
-    // TODO
+    
     @Override
-    @EJB
     protected CarRentalSessionRemote getNewReservationSession(String name) throws Exception {
         InitialContext context = new InitialContext();
         CarRentalSessionRemote session = (CarRentalSessionRemote) context.lookup(CarRentalSessionRemote.class.getName());
@@ -83,7 +82,6 @@ public class Main extends AbstractTestAgency<CarRentalSessionRemote, ManagerSess
     }
 
     @Override
-    @EJB
     protected ManagerSessionRemote getNewManagerSession(String name) throws Exception {
         InitialContext context = new InitialContext();
         ManagerSessionRemote session = (ManagerSessionRemote) context.lookup(ManagerSessionRemote.class.getName());
