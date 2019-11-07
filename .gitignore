@@ -33,3 +33,7 @@ hs_err_pid*
 /ds_jee1_src/CarRental-ejb/build/
 /ds_jee1_src/CarRental-ejb/dist/
 /ds_jee1_src/CarRental-lib/build/
+/ds_jee1_src/jee1.simon.merckx/CarRental-client/nbproject/private/
+/ds_jee1_src/jee1.simon.merckx/CarRental-ejb/nbproject/private/
+/ds_jee1_src/jee1.simon.merckx/CarRental-lib/nbproject/private/
+/ds_jee1_src/jee1.simon.merckx/CarRental/nbproject/private/

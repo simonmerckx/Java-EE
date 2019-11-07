@@ -17,12 +17,12 @@ import rental.RentalStore;
 import rental.Reservation;
 
 
-//TODO Roles aanmaken voor manager
+
 @Stateless
 @RolesAllowed("Manager")
 public class ManagerSession implements ManagerSessionRemote {
     
-    // TODO moet dit in RentalAgency
+    
     @Override
     public int getNumberOfReservationsByRenter(String clientName) {
         Collection<CarRentalCompany> companies = RentalStore.getRentals().values();
